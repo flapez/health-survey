@@ -1,7 +1,9 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
 export default defineConfig({
-  plugins: [react()],
-  base: '/health-survey/', // замените на название вашего репозитория
-})
+  plugins: [react(), tailwindcss(), viteSingleFile()],
+  base: '/health-survey/',
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
+});
